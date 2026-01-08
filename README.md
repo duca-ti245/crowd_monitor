@@ -1,44 +1,43 @@
-# AI-Based Crowd Monitoring Using YOLO
+# AI-Based Crowd Monitoring System Using YOLO 🚦
 
-This project implements an automated crowd monitoring system using Python and YOLOv8. It detects people in video footage, counts them, and triggers alerts if a crowd threshold is exceeded.
+## 📌 Overview
+This project implements an AI-based crowd monitoring system using Python and YOLOv8.
+It detects people in video footage, counts the number of individuals, and triggers alerts
+when crowd density exceeds a predefined threshold. The system is designed to support
+crowd safety monitoring in public places using CCTV or recorded video feeds.
 
-## Features
-- **Person Detection**: Uses YOLOv8 to accurately detect people in each frame.
-- **Crowd Counting**: counts the number of detected persons.
-- **Overcrowding Alert**: 
-    - Visual Warning: Status changes to "OVER CROWDED" (Red).
-    - Console Alert: Prints alert messages.
-    - Image Capture: Saves the frame as an image in the `alerts` folder.
-- **Visualisation**: Draws bounding boxes and displays count/status on video.
+---
 
-## Prerequisites
-- Python 3.8+
-- Internet connection (for first-time model download)
+## ✨ Features
+- **Person Detection**: Accurate people detection using YOLOv8
+- **Crowd Counting**: Counts the total number of detected persons in each frame
+- **Overcrowding Alerts**:
+  - Visual warning displayed as **"OVER CROWDED"** (Red)
+  - Console alert messages
+  - Automatic image capture saved in the `alerts` folder
+- **Visualization**:
+  - Bounding boxes around detected people
+  - Live count and status displayed on video feed
 
-## Installation
+---
 
-1.  **Clone or Download source code** into a folder.
-2.  **Install dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
+## 🛠️ Tech Stack
+- Python
+- OpenCV
+- YOLOv8
+- NumPy
+- Ultralytics
 
-## Usage
+---
 
-1.  **Prepare Video**:
-    - Place your CCTV or crowd video file in the project directory.
-    - Rename it to `input_video.mp4` OR update the `VIDEO_PATH` variable in `detect_video.py` to match your filename.
+## 📋 Prerequisites
+- Python 3.8 or above
+- Internet connection (for first-time YOLO model download)
 
-2.  **Run the System**:
-    ```bash
-    python detect_video.py
-    ```
+---
 
-3.  **Controls**:
-    - Press **'q'** to quit the video window.
-
-## Configuration
-Open `detect_video.py` to adjust:
-- `THRESHOLD`: Number of people to trigger an alert (Default: 10).
-- `VIDEO_PATH`: Path to your input video.
-- `ALERT_FOLDER`: Directory to save alert images.
+## ⚙️ Installation
+1. Clone or download the source code
+2. Install required dependencies:
+   ```bash
+   pip install -r requirements.txt
