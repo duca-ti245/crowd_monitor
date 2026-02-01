@@ -5,12 +5,25 @@ import sys
 print("Python executable:", sys.executable)
 print("Current working dir:", os.getcwd())
 
-video_path = 'input_video.mp4'
-if os.path.exists(video_path):
-    print(f"Video file found: {os.path.abspath(video_path)}")
+# Get the absolute path of the current script's directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Define potential video files to look for
+video_files = ['input_video.mp4', 'input_video1.mp4']
+video_path = None
+
+for fname in video_files:
+    potential_path = os.path.join(script_dir, fname)
+    if os.path.exists(potential_path):
+        video_path = potential_path
+        break
+
+if video_path:
+    print(f"Video file found: {video_path}")
     print(f"File size: {os.path.getsize(video_path)} bytes")
 else:
-    print(f"ERROR: Video file NOT found at: {os.path.abspath(video_path)}")
+    print(f"ERROR: No video file found in {script_dir}")
+    print(f"       Checked for: {video_files}")
     sys.exit(1)
 
 try:
